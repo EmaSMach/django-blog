@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
-{% block title %}
-    Posts - Crear
+{% block headtitle %}
+    Posts
 {% endblock %}
 
 {%block contenido%}
@@ -10,6 +10,9 @@
     <form class="col s12" method="POST" enctype="multipart/form-data">
 
         {% csrf_token %}
+        <div>
+            <h1 class="center">Crear Post</h1>
+        </div>
 
         <div class="row">
             <div class="input-field col s12">
@@ -30,10 +33,10 @@
               <div class="file-field input-field col s6">
                 <div class="btn">
                   <span>Imagen</span>
-                  {{ form.imagen }}
                 </div>
+                {{ form.imagen }}
                 <div class="file-path-wrapper">
-                  <input class="file-path validate" type="text">
+                  <input class="file-path validate" type="text" placeholder="Seleccione una imagen">
                 </div>
               </div>
                 <div class="col s6">
@@ -43,13 +46,6 @@
                   </label>        
                 </div>
           </div>
-
-
-        
-
-
-        
-        
 
       <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
         <button type="submit" class="btn-floating btn-large red">

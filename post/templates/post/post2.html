@@ -1,0 +1,36 @@
+{% extends 'base2.html' %}
+
+{% block title %}
+    Post: {{ post.titulo }}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <!-- empieza post previa -->
+        <div class="col s12">
+            <div class="card">
+                <h2 class="title black-text center">{{ post.titulo }}</h2>
+                <div class="card-image">
+                <img src="{{post.imagen.url}}">
+                
+            </div>
+            <div class="card-content">
+                <p>
+                {{ post.contenido }}
+                </p>
+            </div>
+            <div class="card-action">
+                <a href="#">Like</a>
+                <a href="#">Dislike</a>
+            </div>
+            </div>
+        </div>
+        <!-- fin post previa -->
+    </div>
+    <div class="row">
+        <h6>mas del autor</h6>
+    </div>
+    <div class="row">
+        {% include 'post/grid_post2.html' with posts=mas_post %}
+    </div>
+{% endblock %}

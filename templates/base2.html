@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.min.css'%}" media="screen,projection">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <!-- navbar -->
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper">
+                <a href="#!" class="brand-logo right">ImgPerfil</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="left hide-on-med-and-down">
+                    <li><a href="{% url 'index' %}">Inicio</a></li>
+                    <li ><a href="{% url 'new_post' %}">Crear</a></li>
+                    <li><a href="#">Categorias</a></li>
+                </ul>
+                </div>
+            </nav>
+        </div>
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="{% url 'index' %}">Inicio</a></li>
+            <li><a href="{% url 'new_post' %}">Crear</a></li>
+            <li><a href="#">Categorias</a></li>
+        </ul>     
+    </header>
+    <!-- body -->
+    <div class="container">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+    <script type="text/javascript" src="{% static 'js/materialize.min.js'%}"></script>
+    <script type="text/javascript">
+          document.addEventListener('DOMContentLoaded', function() {
+            M.AutoInit();
+          });
+    </script>
+<!-- <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, options);
+  });
+</script> -->
+</body>
+</html>

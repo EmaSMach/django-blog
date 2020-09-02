@@ -9,7 +9,7 @@ class Post(models.Model):
     fecha_creado = models.DateTimeField(auto_now_add=True)
     fecha_modificado = models.DateTimeField(auto_now=True)
     #categoria
-    permitir_comentarios = models.BooleanField(default = True)
+    permitir_comentarios = models.BooleanField(default=True)
 
     def __str__(self):
         return self.titulo

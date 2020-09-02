@@ -1,0 +1,11 @@
+{% extends 'base2.html' %}
+
+{% block title %}
+    Blog - Posts
+{% endblock %}
+
+{% block content %}
+
+        {% include 'post/grid_post2.html' with posts=posts %}
+ 
+{% endblock %}
